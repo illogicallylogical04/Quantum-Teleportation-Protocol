@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from QT import qt
+from static.QT import qt
 
 app = Flask(__name__)
 

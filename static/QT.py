@@ -70,10 +70,10 @@ def qt(prob_0, prob_1):
         # to get state from circuit and save circuit image and qsphere image
         state_1 = Statevector(qc)
         
-        circuit_image_path = 'H:\quamtum computing\code practice\projects\Quantum Teleportation\circuit_image.png'
+        circuit_image_path = 'H:\GitHub\Quantum-Teleportation-Protocol\static\circuit_image.png'
         qc.draw('mpl').savefig('circuit_image.png')
         
-        qsphere_image_path = 'H:\quamtum computing\code practice\projects\Quantum Teleportation\qsphere_image.png'
+        qsphere_image_path = 'H:\GitHub\Quantum-Teleportation-Protocol\static\qsphere_image.png'
         plot_state_qsphere(state_1).savefig('qsphere_image.png')
         
         return circuit_image_path, qsphere_image_path 
