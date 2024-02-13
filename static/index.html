@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Teleportation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .quote {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .form-container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        hr {
+            margin-top: 50px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+        #finalStateBob {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .final-state {
+            text-align: center;
+        }
+        .final-state img {
+            margin-top: 20px;
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .qsphere img{
+            margin-top: 20px;
+            max-width: 70%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .qsphere {
+            text-align: center;
+        }
+        .caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Quantum Teleportation</h1>
+
+    <p>Quantum teleportation is a fascinating concept in quantum mechanics that involves the transfer of quantum information from one location to another, without the physical transfer of particles. Unlike traditional teleportation seen in science fiction, which typically involves the instantaneous transport of macroscopic objects or people, quantum teleportation deals with the transfer of quantum states.</p>
+
+    <p>The concept of quantum teleportation was first proposed by Charles H. Bennett, Gilles Brassard, Claude Crépeau, Richard Jozsa, Asher Peres, and William K. Wootters in 1993. It relies on the principles of quantum entanglement and classical communication to achieve its remarkable capabilities.</p>
+
+    <p>At the heart of quantum teleportation is the phenomenon of quantum entanglement, where two or more particles become correlated in such a way that the state of one particle instantaneously influences the state of the other(s), regardless of the distance between them. This non-local correlation forms the basis for the teleportation process.</p>
+
+    <p>The teleportation process involves three main steps:</p>
+
+    <ol>
+        <li>Creating an entangled pair of particles: Initially, two particles become entangled, typically through a process such as spontaneous parametric down-conversion.</li>
+        <li>Performing a measurement: The sender, who possesses the quantum state to be teleported, performs a joint measurement on the particle they wish to teleport and one of the entangled particles.</li>
+        <li>Communicating the measurement results: The sender then communicates the results of their measurement to the receiver using classical communication channels.</li>
+        <li>State reconstruction: Based on the information received, the receiver performs a specific quantum operation on their entangled particle, effectively reconstructing the original quantum state.</li>
+    </ol>
+
+    <p>Quantum teleportation has important implications for various fields, including quantum computing, quantum communication, and quantum cryptography. It forms the basis for secure quantum communication protocols and plays a crucial role in quantum network development.</p>
+
+    <p>Despite its name, quantum teleportation does not enable the teleportation of macroscopic objects or violate the principles of causality or special relativity. Instead, it showcases the remarkable properties of quantum mechanics and opens up new possibilities for information processing and communication in the quantum realm.</p>
+
+    <div class="form-container">
+        <h2>Experience Quantum Teleportation</h2>
+        <p>Enter the probabilities of |0&gt; and |1&gt; for your state |phi&gt;:</p>
+        <form id="teleportationForm">
+            <label for="probability0">Probability of |0&gt;:</label>
+            <input type="number" id="probability0" name="probability0" min="0" max="1" step="0.01" required>
+            <label for="probability1">Probability of |1&gt;:</label>
+            <input type="number" id="probability1" name="probability1" min="0" max="1" step="0.01" required>
+            <button type="submit">Teleport</button>
+        </form>
+        <div id="teleportationResult"></div>
+    </div>
+
+    <div class="initial-states">
+        <h2>Initial States</h2>
+        <p>Alice's initial state: <span id="aliceState">|0&gt;</span></p>
+        <p>Bob's initial state: <span id="bobState">|0&gt;</span></p>
+    </div>
+
+    <hr>
+
+    <div class="final-state">
+        <h2>Final Circuit</h2>
+        <img src="H:\quamtum computing\code practice\projects\Quantum Teleportation\templates\circuit_image.jpeg" alt="Quantum Teleportation Circuit">
+        <div class="caption">Quantum Teleportation Circuit</div>
+    </div>
+
+    <br>
+
+    <div class="qsphere">
+        <h2>QSphere of the result</h2>
+        <img src="H:\quamtum computing\code practice\projects\Quantum Teleportation\templates\qsphere_image.jpeg" alt="Qsphere">
+        <div class="caption">QSphere</div>
+    </div>
+
+    <div class="quote">
+        "I think I can safely say that nobody understands quantum mechanics." - Richard Feynman
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 Quantum Teleportation Website
+</footer>
+
+
+<script>
+    document.getElementById('teleportForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const probability0 = document.getElementById('probability0').value;
+        const probability1 = document.getElementById('probability1').value;
+
+        fetch('/teleport', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ probability0, probability1 }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('circuitImage').innerHTML = `<img src="${data.circuitImage}" alt="Quantum Circuit">`;
+            document.getElementById('qsphereImage').innerHTML = `<img src="${data.qsphereImage}" alt="QSphere">`;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+</body>
+</html>
