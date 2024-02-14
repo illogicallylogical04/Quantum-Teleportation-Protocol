@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')  # Set the backend to Agg before importing pyplot
 import matplotlib.pyplot as plt
 from qiskit import *
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, execute, Aer

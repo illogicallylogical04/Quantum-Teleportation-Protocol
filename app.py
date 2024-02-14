@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from static.QT import qt
 
+print('Imported!!')
 app = Flask(__name__)
 
 @app.route('/teleport', methods=['POST'])
@@ -11,7 +12,7 @@ def teleport():
     
     # Call the quantum teleportation function
     circuit_image, qsphere_image = qt(prob_0, prob_1)
-
+    
     return jsonify({
         'circuitImage': circuit_image,
         'qsphereImage': qsphere_image
